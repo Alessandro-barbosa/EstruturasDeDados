@@ -18,7 +18,7 @@ void startRow(queue *f){
     printf("row started!\n");
 }   
 
-void insert(queue *f, int value){
+void insertRow(queue *f, int value){
     if (f->pos_end == tam)
     {
         printf("impossible to insert, full row!\n");
@@ -70,13 +70,14 @@ void menu(queue *f){
             printf("value: ");
             int value; 
             scanf("%d", &value);
-            insert(&f, value);
+            insertRow(&f, value);
             break;
         case 2: 
             removeRow(&f);
             break;
         case 3:
             showRow(&f);
+            break;
         default:
             printf("Invalid option!");
             break;
