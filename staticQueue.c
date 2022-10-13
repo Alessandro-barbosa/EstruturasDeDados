@@ -1,9 +1,9 @@
 #include <stdio.h>
-#define tam 10
+#define size 10
 #define true 1
 
 typedef struct queue{
-    int queue[tam];
+    int queue[size];
     int pos_end;
     int pos_first;
 
@@ -12,14 +12,14 @@ typedef struct queue{
 void startRow(queue *f){
     f->pos_end = 0;
     f->pos_first = 0;
-    for (int i = 0; i < tam; i++){
+    for (int i = 0; i < size; i++){
         f->queue[i] = 0;
     }    
     printf("row started!\n");
 }   
 
 void insertRow(queue *f, int value){
-    if (f->pos_end == tam)
+    if (f->pos_end == size)
     {
         printf("impossible to insert, full row!\n");
     }
@@ -36,16 +36,16 @@ void removeRow(queue *f){
     else{
         printf("value removido: %d\n", f->queue[0]);
         int i = 0;
-        while(i < tam-1){
+        while(i < size-1){
             f->queue[i] = f->queue[i+1];
             i++;
         }                
-        f->queue[tam-1] = 0;
+        f->queue[size-1] = 0;
         f->pos_end--;
     }
 }
 void showRow(queue *f){
-    for (int i = 0; i < tam; i++)
+    for (int i = 0; i < size; i++)
     {
         printf("%d ", f->queue[i]);
     }
