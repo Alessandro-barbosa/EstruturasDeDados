@@ -34,7 +34,7 @@ void removeRow(queue *f){
         printf("impossible to remove, empty row!\n");
     }
     else{
-        printf("value removido: %d\n", f->queue[0]);
+        printf("removed value: %d\n", f->queue[0]);
         int i = 0;
         while(i < size-1){
             f->queue[i] = f->queue[i+1];
